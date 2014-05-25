@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe "Static pages" do
   describe "Home page" do
-
   	it "should have the content 'Sample App' " do
   		visit '/static_pages/home' 
   		expect(page).to have_content('Sample App')
@@ -15,7 +14,6 @@ describe "Static pages" do
   end
 
   describe "Help page" do
-
   	it "should have the content 'Help' " do 
   		visit '/static_pages/help'
   		expect(page).to have_content('Help')
@@ -28,7 +26,7 @@ describe "Static pages" do
   end
 
   describe "About page" do
-  	it "should have the content 'About Us' " do
+  	it "should have the content 'About Us'" do
   		visit '/static_pages/about'
   		expect(page).to have_content('About Us')
   	end
@@ -38,5 +36,16 @@ describe "Static pages" do
   		expect(page).to have_title('Ruby on Rails Sample App | About Us')
   	end
   end
-end
+  
+  describe "Contact page" do
+  	it "should have the content 'Contact Us'" do
+  		visit "/static_pages/contact"
+  		expect(page).to have_content('Contact Us')
+  	end
 
+  	it "should have the title 'Contact Us'" do
+  		visit '/static_pages/contact'
+  		expect(page).to have_title('Ruby on Rails Sample App | Contact Us')
+  	end
+  end
+end
